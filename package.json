@@ -1,0 +1,95 @@
+{
+  "name": "hdd",
+  "version": "1.0.0",
+  "description": "Hollow Deep Dive System Simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "chcp 65001 && electron .",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-builder",
+    "dist-win": "electron-builder --win --ia32",
+    "dist-win64": "electron-builder --win --x64",
+    "dist-mac": "electron-builder --mac",
+    "dist-linux": "electron-builder --linux"
+  },
+  "author": "itiswdwa",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron": "^31.3.1",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "build": {
+    "appId": "com.itiswdwa.HollowDeepDiver",
+    "productName": "",
+    "files": [
+      "src/**/*",
+      "index.js",
+      "index.html",
+      "node_modules/**/*",
+      "fs.exe",
+      "hdd.ico",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "build/app",
+      "app": "./",
+      "buildResources": "assets"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "win": {
+      "icon": "./hdd.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "./hdd.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./hdd.ico"
+    },
+    "dmg": {
+      "title": "Mac程序",
+      "icon": "./hdd.ico",
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "x": 400,
+        "y": 400
+      }
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080/updata/"
+      }
+    ]
+  }
+}

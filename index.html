@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hollow Deep Diver</title>
+    <script src="src/js/jquery-3.7.1.min.js"></script>
+    <script src="src/js/xterm.js"></script>
+    <script src="src/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/index.css" >
+    <link rel="stylesheet" href="src/css/xterm.css" />
+</head>
+<body>
+    <audio id="fairy" src="http://127.0.0.1:16384/src/sounds/fairy.mp3" style="display:none;" crossorigin="true"></audio>
+    <audio id="battle" src="http://127.0.0.1:16384/src/sounds/zzzBattle.mp3" style="display:none;" crossorigin="true"></audio>
+    <button type="button" id="key-start" title="KeyStart" style="display: none;"></button>
+    <div class="loader screen">
+        <div class="contents screen">
+            <pre class="codefont">
+    Welcome to Hollow Deep Diver
+    Led by Helios Reserch Institute
+    copyright(C)A.K.A Hollow Deep Dive System
+    Press Enter to start.
+            </pre>
+        </div>
+    </div>
+    <div class="start-bg screen" style="display: none;"></div>
+    <div class="screen mainpage bg" style="display: none;">
+        <div id="screen mainpage-bg"></div>
+        <div id="terminal"></div>
+    </div>
+</body>
+</html>

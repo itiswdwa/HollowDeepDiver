@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'CodeFont';
+    src: url('atom:///src/fonts/black.ttf') format('truetype');
+}
+
+body {
+    background: #000000;
+    overflow-y: hidden;
+}
+
+.start-bg {
+    background-image: url("atom:///src/imgs/bootScreen.png");
+    background-size: cover;
+}
+
+#loading-bg {
+    background: #000000
+}
+
+#bg-mainpage {
+    background-image: url("atom:///src/imgs/bootScreen.png");
+    background-size: cover;
+}
+
+.screen {
+    height: 100vh;
+    width: 100%;
+}
+
+.codefont {
+    font-family: "CodeFont";
+    color: #ffffff;
+}
